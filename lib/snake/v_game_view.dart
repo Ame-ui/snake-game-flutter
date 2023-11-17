@@ -177,6 +177,7 @@ class _GameViewState extends State<GameView> {
                           snkController.restartGame(false);
                           snkController.xGameStarted = false;
                         } else {
+                          snkController.xGamePause = false;
                           snkController.xGameStarted = true;
                           snkController.moveSnake();
                         }
@@ -216,7 +217,7 @@ class _GameViewState extends State<GameView> {
                     ),
                     Visibility(
                         visible: snkController.xGameStarted,
-                        child: SizedBox(
+                        child: const SizedBox(
                           width: 50,
                         )),
                     Visibility(
