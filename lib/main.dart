@@ -1,10 +1,16 @@
-import 'package:cube/snake/c_snake_controller.dart';
-import 'package:cube/snake/v_game_view.dart';
+import 'package:cube/socket_test.dart';
+import 'package:cube/test.dart';
+import 'package:cube/ybs/bus_line/c_bus_line.dart';
+import 'package:cube/ybs/bus_stop/c_bus_stop.dart';
+import 'package:cube/ybs/v_ybs_home.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
-  Get.put(SnakeController());
+  WidgetsFlutterBinding.ensureInitialized();
+  Get.put(BusStopController());
+  Get.put(BusLineController());
   runApp(const MyApp());
 }
 
@@ -32,10 +38,10 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
         useMaterial3: false,
       ),
-      home: const GameView(),
+      home: const TestPage(),
     );
   }
 }
